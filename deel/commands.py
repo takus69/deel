@@ -5,8 +5,8 @@ from chainer import computational_graph
 from chainer import cuda
 from chainer import optimizers
 from chainer import serializers
-from deel.tensor import *
-from deel.network import *
+from .tensor import *
+from .network import *
 from deel import *
 import json
 import os
