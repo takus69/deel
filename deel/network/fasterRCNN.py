@@ -44,8 +44,8 @@ def img_preprocessing(orig_img, pixel_means, max_size=1000, scale=600):
 
 def draw_result(out, im_scale, clss, bbox, nms_thresh, conf):
 	CV_AA = 16
-	print clss.shape
-	print bbox.shape
+	print(clss.shape)
+	print(bbox.shape)
 	for cls_id in range(1, 21):
 		_cls = clss[:, cls_id][:, np.newaxis]
 		_bbx = bbox[:, cls_id * 4: (cls_id + 1) * 4]
@@ -69,7 +69,7 @@ def draw_result(out, im_scale, clss, bbox, nms_thresh, conf):
 
 def draw_rois(out,im_scale, rois,bbox,cls):
 	CV_AA = 16
-	print bbox.shape
+	print(bbox.shape)
 	for i in range(len(rois)):
 		n,x1,y1,x2,y2 = rois[i]
 		canvas = out.copy()

@@ -36,7 +36,7 @@ def Input(x):
 			t = ImageTensor(img)
 			t.use()
 		elif ext=='.txt':
-			print "this is txt"
+			print("this is txt")
 
 	return t
 
@@ -93,8 +93,8 @@ def read_image(path, center=False, flip=False):
 		else:
 			return image
 	except ValueError:
-		print "---- Read_Image Value Error ----"
-		print path
+		print("---- Read_Image Value Error ----")
+		print(path)
 
 		return None
 
@@ -166,7 +166,7 @@ def feed_data():
 
 			count += 1
 			if count % 3000 == 0:
-				print "checkout"
+				print("checkout")
 				if checkout:
 					checkout()
 				BatchTrainer.data_q.put('val')
@@ -246,7 +246,7 @@ def log_result():
 				train_cur_accuracy = 0
 		else:
 			val_count += val_batchsize
-			print "valc",val_count
+			print("valc",val_count)
 			duration = time.time() - val_begin_at
 			throughput = val_count / duration
 			print(

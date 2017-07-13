@@ -40,7 +40,7 @@ class Tensor(object):
 	def use(self):
 		Tensor.context = self
 	def show(self):
-			print self.get()
+			print(self.get())
 	def get(self):
 		return self.value
 

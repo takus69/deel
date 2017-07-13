@@ -37,16 +37,16 @@ def getDim(shape):
 	return dim
 
 def LoadCaffeModel(path):
-	print "Loading %s"%path
+	print("Loading %s"%path)
 	root, ext = os.path.splitext(path)
 	cachepath = 'cache/'+hashlib.sha224(root).hexdigest()+".pkl"
 	if path in __Model_cache:
-		print "Cache hit"
+		print("Cache hit")
 		func = __Model_cache[path]
 	if os.path.exists(cachepath):
 		func = pickle.load(open(cachepath,'rb'))
 	else:
-		print "Converting from %s"%path
+		print("Converting from %s"%path)
 		#func = caffe.CaffeFunction('misc/'+path)
 		func = CaffeFunction('misc/'+path)
 		pickle.dump(func, open(cachepath, 'wb'))
@@ -199,11 +199,11 @@ class ImageNet(Network):
 		return t
 	def ShowLayers(self):
 		for layer in self.func.layers:
-			print layer[0],
+			print(layer[0],)
 			if hasattr(self.func,layer[0]):
-				print self.func[layer[0]].W.data.shape
+				print(self.func[layer[0]].W.data.shape)
 			else:
-				print " "
+				print(" ")
 
 
 
