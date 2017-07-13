@@ -334,14 +334,8 @@ def _sum_sqnorm(arr):
 Followings are hot fix for a book "Hajimete no Shinso Gakusyu"
 """
 
-import alexnet
+from deel.network.alexnet import AlexNet
 
-Alexnet = alexnet.AlexNet
+from deel.network.nin import NetworkInNetwork
 
-import nin
-
-NetworkInNetwork = nin.NetworkInNetwork
-
-import googlenet
-
-GoogLeNet = googlenet.GoogLeNet
+from deel.network.googlenet import GoogLeNet
