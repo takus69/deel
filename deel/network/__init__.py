@@ -39,7 +39,7 @@ def getDim(shape):
 def LoadCaffeModel(path):
 	print("Loading %s"%path)
 	root, ext = os.path.splitext(path)
-	cachepath = 'cache/'+hashlib.sha224(root).hexdigest()+".pkl"
+	cachepath = 'cache/'+hashlib.sha224(root.encode('utf-8')).hexdigest()+".pkl"
 	if path in __Model_cache:
 		print("Cache hit")
 		func = __Model_cache[path]
