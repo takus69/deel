@@ -19,7 +19,7 @@ import hashlib
 import datetime
 import sys
 import random
-from deel import *
+from deel.deel import *
 
 class Tensor(object):
 	""" A tensor """

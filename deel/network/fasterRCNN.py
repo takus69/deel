@@ -6,7 +6,7 @@ from deel.model.faster_rcnn import FasterRCNN as FRCNN
 import chainer
 import cv2 as cv
 import numpy as np
-from deel import *
+from deel.deel import *
 from deel.tensor import *
 from deel.network import *
 from deel.model import *

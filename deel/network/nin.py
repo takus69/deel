@@ -8,7 +8,7 @@ from deel.network import *
 import chainer.serializers as cs
 import copy
 
-from deel import *
+from deel.deel import *
 import chainer
 import json
 import os

@@ -7,7 +7,7 @@ from chainer import computational_graph as c
 from deel.tensor import *
 import copy
 
-from deel import *
+from deel.deel import *
 import chainer
 import json
 import os
@@ -93,11 +93,11 @@ def filter(image,flip=False,center=True):
 	image_w, image_h = image_shape
 	h, w,d = image.shape
 	if w > h:
-	    shape = (image_w * w / h, image_h)
+	    shape = (int(image_w * w / h), image_h)
 	else:
-	    shape = (image_w, image_h * h / w)
-	x = (shape[0] - image_w) / 2
-	y = (shape[1] - image_h) / 2
+	    shape = (image_w, int(image_h * h / w))
+	x = int((shape[0] - image_w) / 2)
+	y = int((shape[1] - image_h) / 2)
 	resized_img = Image.fromarray(np.uint8(image))
 	resized_img=resized_img.resize(shape)
 	if not center:
@@ -109,10 +109,10 @@ def filter(image,flip=False,center=True):
 		image = image[:, :, ::-1]
 	image = image.transpose(2,0,1)
 	crop = 256-ImageNet.in_size
-	x = crop/2
-	y = crop/2
-	w = 256-crop/2-x
-	h = 256-crop/2-y
+	x = int(crop/2)
+	y = int(crop/2)
+	w = 256-int(crop/2)-x
+	h = 256-int(crop/2)-y
 	if w != image.shape[2]:
 		w = image.shape[2]
 	if h != image.shape[1]:
