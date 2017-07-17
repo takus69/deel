@@ -19,7 +19,7 @@ import hashlib
 import datetime
 import sys
 import random
-from deel.deel import *
+from .deel import *
 from functools import cmp_to_key
 
 class Tensor(object):
