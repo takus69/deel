@@ -20,6 +20,7 @@ import datetime
 import sys
 import random
 from deel.deel import *
+from functools import cmp_to_key
 
 class Tensor(object):
 	""" A tensor """
@@ -100,8 +101,8 @@ class LabelTensor(Tensor):
 		super(LabelTensor,self).__init__(
 				x,
 				comment=comment)
-		out=zip(x.value[0].tolist(), x.owner.labels)
-		out.sort(cmp=lambda a, b: cmp(a[0], b[0]), reverse=True)
+		out=list(zip(x.value[0].tolist(), x.owner.labels))
+		out.sort(key=cmp_to_key(lambda a, b: ((a[0] > b[0]) - (a[0] < b[0]))), reverse=True)
 		self.content = out
 
 	def show(self,num_of_candidate=20):

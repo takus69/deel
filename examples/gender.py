@@ -1,4 +1,4 @@
-from deel import *
+from deel.deel import *
 from deel.network import *
 from deel.network.caffenet import *
 from deel.commands import *
