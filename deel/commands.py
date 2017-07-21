@@ -435,7 +435,7 @@ def Output(x=None,num_of_candidate=5):
 
 	out = x.output
 
-	out.sort(cmp=lambda a, b: cmp(a[0], b[0]), reverse=True)
+	out.sort(key=cmp_to_key(lambda a, b: ((a[0] > b[0]) - (a[0] < b[0]))), reverse=True)
 	for rank, (score, name) in enumerate(out[:num_of_candidate], start=1):
 		print('#%d | %s | %4.1f%%' % (rank, name, score * 100))
 

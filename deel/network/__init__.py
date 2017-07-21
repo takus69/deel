@@ -222,7 +222,7 @@ class LSTM(Network):
 		n_vocab = len(vocab)
 		super(LSTM,self).__init__('LSTM')
 
-		self.func = model.lstm.RNNLM(n_input_units=n_input_units,n_vocab=n_vocab,n_units=n_units)
+		self.func = deel.model.lstm.RNNLM(n_input_units=n_input_units,n_vocab=n_vocab,n_units=n_units)
 		self.func.compute_accuracy = False 
 		for param in self.func.params():
 			data = param.data

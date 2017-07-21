@@ -49,7 +49,7 @@ class DQN(Network):
 
 		self.time = 0
 		self.epsilon = 1.0  # Initial exploratoin rate
-		self.func = model.q_net.QNet(Deel.gpu,self.actions,self.image_feature_dim)
+		self.func = deel.model.q_net.QNet(Deel.gpu,self.actions,self.image_feature_dim)
 
 	def actionAndLearn(self,x=None):
 		if x is None:
